@@ -1,12 +1,16 @@
 //
 //  AFViewController.m
-//  AFModule
+//  ServiceHackerObjc
 //
 //  Created by AFutureD on 06/24/2022.
 //  Copyright (c) 2022 AFutureD. All rights reserved.
 //
 
 #import "AFViewController.h"
+#import <AFModule/AFServices.h>
+#import "AFSIManager.h"
+#import "AFSIProtocol.h"
+#import "AFSIRelataionBuilderProtocol.h"
 
 @interface AFViewController ()
 
@@ -14,16 +18,16 @@
 
 @implementation AFViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    [[AFModule shareInstance] start];
+    
+    [[AFModule shareInstance].spaceInfo hello:@"world"];
+    [[AFModule shareInstance].relationBuilder say:@"hello. Once"];
+    
+    [[AFModule shareInstance].spaceInfo prepareImpl];
+    [[AFModule shareInstance].relationBuilder say:@"hello. Twice"];
 }
 
 @end

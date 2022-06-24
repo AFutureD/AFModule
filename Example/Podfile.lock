@@ -1,0 +1,23 @@
+PODS:
+  - AFModule (0.1.0):
+    - YYModel
+  - YYModel (1.0.4)
+
+DEPENDENCIES:
+  - AFModule (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - YYModel
+
+EXTERNAL SOURCES:
+  AFModule:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AFModule: b412def409af9ff30d90905f85873a67146d00c0
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+
+PODFILE CHECKSUM: 426720c53cbc49d46e4e4f7cd8f817f030f757e6
+
+COCOAPODS: 1.11.2

@@ -23,6 +23,8 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		D28795E728660F6B004FC941 /* AFSIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D28795E328660F6B004FC941 /* AFSIManager.m */; };
+		D28795E828660F6B004FC941 /* AFSIRelationBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = D28795E428660F6B004FC941 /* AFSIRelationBuilder.m */; };
 		D5A979D1D865E7828FAD294F /* Pods_AFModule_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B488F17D38BB405F5B079CBD /* Pods_AFModule_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,7 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		26784AC8280734BEE449719A /* AFModule.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = AFModule.podspec; path = ../AFModule.podspec; sourceTree = "<group>"; };
+		26784AC8280734BEE449719A /* AFModule.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = AFModule.podspec; path = ../AFModule.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		5B30C6E5FDEB0D01FF5DAE56 /* Pods-AFModule_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AFModule_Example.release.xcconfig"; path = "Target Support Files/Pods-AFModule_Example/Pods-AFModule_Example.release.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* AFModule_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFModule_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -59,14 +61,20 @@
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		733F2A775B5841CCF53E6245 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		733F2A775B5841CCF53E6245 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		7D27517419EB8F4800E44919 /* Pods-AFModule_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AFModule_Tests.release.xcconfig"; path = "Target Support Files/Pods-AFModule_Tests/Pods-AFModule_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8F6EB4504682AD7121E854D6 /* Pods-AFModule_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AFModule_Tests.debug.xcconfig"; path = "Target Support Files/Pods-AFModule_Tests/Pods-AFModule_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		B488F17D38BB405F5B079CBD /* Pods_AFModule_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AFModule_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C314970CEB0FC922141AF57B /* Pods-AFModule_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AFModule_Example.debug.xcconfig"; path = "Target Support Files/Pods-AFModule_Example/Pods-AFModule_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		C6A4969785B9CA4AEF3395E9 /* Pods_AFModule_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AFModule_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC7E0A6ACC63440A9C685245 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		D28795E328660F6B004FC941 /* AFSIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSIManager.m; sourceTree = "<group>"; };
+		D28795E428660F6B004FC941 /* AFSIRelationBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSIRelationBuilder.m; sourceTree = "<group>"; };
+		D28795E528660F6B004FC941 /* AFSIRelationBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSIRelationBuilder.h; sourceTree = "<group>"; };
+		D28795E628660F6B004FC941 /* AFSIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSIManager.h; sourceTree = "<group>"; };
+		D28795E928660F77004FC941 /* AFSIProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSIProtocol.h; sourceTree = "<group>"; };
+		D28795EA28660F77004FC941 /* AFSIRelataionBuilderProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSIRelataionBuilderProtocol.h; sourceTree = "<group>"; };
+		FC7E0A6ACC63440A9C685245 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +111,6 @@
 				8F6EB4504682AD7121E854D6 /* Pods-AFModule_Tests.debug.xcconfig */,
 				7D27517419EB8F4800E44919 /* Pods-AFModule_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -144,13 +151,10 @@
 		6003F593195388D20070C39A /* Example for AFModule */ = {
 			isa = PBXGroup;
 			children = (
-				6003F59C195388D20070C39A /* AFAppDelegate.h */,
-				6003F59D195388D20070C39A /* AFAppDelegate.m */,
-				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
+				D28795E228660EFA004FC941 /* Implements */,
+				D28795E128660EE7004FC941 /* Protocols */,
 				6003F5A5195388D20070C39A /* AFViewController.h */,
 				6003F5A6195388D20070C39A /* AFViewController.m */,
-				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
-				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
 			name = "Example for AFModule";
@@ -160,6 +164,11 @@
 		6003F594195388D20070C39A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6003F59C195388D20070C39A /* AFAppDelegate.h */,
+				6003F59D195388D20070C39A /* AFAppDelegate.m */,
+				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
+				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
+				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F595195388D20070C39A /* AFModule-Info.plist */,
 				6003F596195388D20070C39A /* InfoPlist.strings */,
 				6003F599195388D20070C39A /* main.m */,
@@ -195,6 +204,26 @@
 				733F2A775B5841CCF53E6245 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		D28795E128660EE7004FC941 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D28795E928660F77004FC941 /* AFSIProtocol.h */,
+				D28795EA28660F77004FC941 /* AFSIRelataionBuilderProtocol.h */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		D28795E228660EFA004FC941 /* Implements */ = {
+			isa = PBXGroup;
+			children = (
+				D28795E628660F6B004FC941 /* AFSIManager.h */,
+				D28795E328660F6B004FC941 /* AFSIManager.m */,
+				D28795E528660F6B004FC941 /* AFSIRelationBuilder.h */,
+				D28795E428660F6B004FC941 /* AFSIRelationBuilder.m */,
+			);
+			name = Implements;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,6 +277,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = AFutureD;
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = 94JFPTRDN5;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -258,6 +290,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -325,10 +358,12 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-AFModule_Example/Pods-AFModule_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFModule/AFModule.framework",
+				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFModule.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -364,8 +399,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D28795E828660F6B004FC941 /* AFSIRelationBuilder.m in Sources */,
 				6003F59E195388D20070C39A /* AFAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* AFViewController.m in Sources */,
+				D28795E728660F6B004FC941 /* AFSIManager.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -494,11 +531,12 @@
 			baseConfigurationReference = C314970CEB0FC922141AF57B /* Pods-AFModule_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 94JFPTRDN5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AFModule/AFModule-Prefix.pch";
 				INFOPLIST_FILE = "AFModule/AFModule-Info.plist";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = me.afuture.AFModule;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				WRAPPER_EXTENSION = app;
@@ -510,11 +548,12 @@
 			baseConfigurationReference = 5B30C6E5FDEB0D01FF5DAE56 /* Pods-AFModule_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 94JFPTRDN5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AFModule/AFModule-Prefix.pch";
 				INFOPLIST_FILE = "AFModule/AFModule-Info.plist";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = me.afuture.AFModule;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				WRAPPER_EXTENSION = app;

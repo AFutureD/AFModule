@@ -24,7 +24,9 @@
     [[AFModule shareInstance] start];
     
     [[AFModule shareInstance].spaceInfo hello:@"world"];
+    
     [[AFModule shareInstance].relationBuilder say:@"hello. Once"];
+    NSAssert([AFModule shareInstance].relationBuilder == nil, @"");
     
     [[AFModule shareInstance].spaceInfo prepareImpl];
     [[AFModule shareInstance].relationBuilder say:@"hello. Twice"];

@@ -56,11 +56,6 @@
 
 - (id<AFProtocolA>)myService {
     id<AFProtocolA> impl = [AFModule implForProtocol:@protocol(AFProtocolA)];
-    Creater block = self.myServiceProvider.creater;
-    if (impl == nil && block) {
-        impl = block(self);
-        [AFModule setImpl:impl protocol:@protocol(AFProtocolA)];
-    }
     return impl;
 }
 

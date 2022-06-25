@@ -62,11 +62,19 @@
     dispatch_semaphore_wait(self->_implLock, DISPATCH_TIME_FOREVER);
     id impl = [self.protToImpl objectForKey:protocol];
     dispatch_semaphore_signal(self->_implLock);
+    id<AFModuleProvider> provider = [self providerForProtocol:protocol];
+    Creater block = [provider creater];
+    if (impl == nil && block) {
+        impl = block(self);
+        [self setImpl:impl protocol:protocol];
+    }
     return impl;
 }
 
 - (void)setImpl:(nullable id)impl protocol:(nonnull Protocol *)protocol {
-    id old = [self implForProtocol:protocol];
+    dispatch_semaphore_wait(self->_implLock, DISPATCH_TIME_FOREVER);
+    id old = [self.protToImpl objectForKey:protocol];
+    dispatch_semaphore_signal(self->_implLock);
     if (!old && !impl) {
         // Nothing should happend.
         return;

@@ -4,15 +4,20 @@
 //
 //  Created by 尼诺 on 2022/6/24.
 //
+#ifndef AFMODULEDEFINE_H
+#define AFMODULEDEFINE_H
 
 #define DeclareProtocol(_PROPERTY_NAME, _PROTOCOL) \
 \
-@interface AFModule (AFProtocolA) \
+@interface AFModule (_PROTOCOL) \
 \
 @property (nonatomic, strong, readonly) id<AFModuleProvider> _PROPERTY_NAME ## Provider; \
 @property (nonatomic, strong, readonly) id<_PROTOCOL> _PROPERTY_NAME; \
 \
 @end \
+
+
+//
 
 #define RegistProtocol(_PRIORITY, _PROPERTY_NAME, _PROTOCOL, INITBLOCK) \
 \
@@ -22,7 +27,7 @@
 \
 @implementation _ ## _PROTOCOL ## _Provider \
 \
-- (Protocol *)protocol {\
+- (Protocol *)protocol { \
     return @protocol(_PROTOCOL); \
 } \
 \
@@ -35,8 +40,12 @@
     return _PRIORITY; \
 } \
 \
-@end\
-\
+@end \
+ExtendAFModule(_PROPERTY_NAME, _PROTOCOL)
+
+//
+
+#define ExtendAFModule(_PROPERTY_NAME, _PROTOCOL) \
 \
 @interface AFModule (_PROTOCOL) \
 @end \
@@ -60,12 +69,9 @@
 \
 - (id<_PROTOCOL>)_PROPERTY_NAME { \
     id<_PROTOCOL> impl = [AFModule implForProtocol:@protocol(_PROTOCOL)]; \
-    Creater block = self._PROPERTY_NAME ## Provider.creater; \
-    if (impl == nil && block) { \
-        impl = block(self); \
-        [AFModule setImpl:impl protocol:@protocol(_PROTOCOL)]; \
-    } \
     return impl; \
 } \
 \
 @end \
+
+#endif

@@ -1,6 +1,6 @@
 //
 //  AFViewController.m
-//  ServiceHackerObjc
+//  AFModule
 //
 //  Created by AFutureD on 06/24/2022.
 //  Copyright (c) 2022 AFutureD. All rights reserved.
@@ -8,9 +8,9 @@
 
 #import "AFViewController.h"
 #import <AFModule/AFServices.h>
-#import "AFSIManager.h"
-#import "AFSIProtocol.h"
-#import "AFSIRelataionBuilderProtocol.h"
+#import "AFObjA.h"
+#import "AFProtocolA.h"
+#import "AFProtocolB.h"
 
 @interface AFViewController ()
 
@@ -23,13 +23,14 @@
     
     [[AFModule shareInstance] start];
     
-    [[AFModule shareInstance].spaceInfo hello:@"world"];
+    [[AFModule shareInstance].myService hello:@"world"];
     
-    [[AFModule shareInstance].relationBuilder say:@"hello. Once"];
-    NSAssert([AFModule shareInstance].relationBuilder == nil, @"");
+    [[AFModule shareInstance].yourService say:@"hello. Once"];
+    NSAssert([AFModule shareInstance].yourService == nil, @"");
     
-    [[AFModule shareInstance].spaceInfo prepareImpl];
-    [[AFModule shareInstance].relationBuilder say:@"hello. Twice"];
+    [[AFModule shareInstance].myService prepareImpl];
+    [[AFModule shareInstance].yourServiceProvider restCreater];
+    [[AFModule shareInstance].yourService say:@"hello. Twice"];
 }
 
 @end

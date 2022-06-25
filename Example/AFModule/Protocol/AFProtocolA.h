@@ -1,6 +1,6 @@
 //
-//  AFSIProtocol.h
-//  ServiceHackerObjc_Example
+//  AFProtocolA.h
+//  AFModule_Example
 //
 //  Created by 尼诺 on 2022/6/24.
 //  Copyright © 2022 AFutureD. All rights reserved.
@@ -11,17 +11,17 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol AFSIProtocol <AFModuleProtocolIndicator>
+@protocol AFProtocolA <AFModuleProtocolIndicator>
 
 - (void)hello:(NSString *)name;
 - (void)prepareImpl;
 
 @end
 
-@interface AFModule (AFSIProtocol)
+@interface AFModule (AFProtocolA)
 
-@property (nonatomic, strong) id<AFModuleProvider> spaceInfoProvider;
-@property (nonatomic, strong) id<AFSIProtocol> spaceInfo;
+@property (nonatomic, strong, readonly) id<AFModuleProvider> myServiceProvider;
+@property (nonatomic, strong) id<AFProtocolA> myService;
 
 @end
 

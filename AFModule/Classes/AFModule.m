@@ -1,6 +1,6 @@
 //
 //  AFModule.m
-//  Pods-ServiceHackerObjc_Example
+//  Pods-AFModule_Example
 //
 //  Created by 尼诺 on 2022/6/24.
 //
@@ -128,7 +128,11 @@
 }
 
 - (void)reload {
-    //
+    NSArray<Protocol *> * protocols = [self protocolsForProviders];
+    for (Protocol * protocol in protocols) {
+        id<AFModuleProvider> provider = [self providerForProtocol:protocol];
+        [provider restCreater];
+    }
 }
 
 - (void)prepareProvider {
@@ -177,8 +181,9 @@
         __weak __typeof(self)weakSelf = self;
         [provider setCallback:^(id<AFModuleProvider>  _Nonnull provider) {
             __strong __typeof(weakSelf)strongSelf = weakSelf;
-            [strongSelf setProvider:nil protocol:protocol];
-            NSLog(@"Module Provider @: reload - %@", provider);
+//            [strongSelf setProvider:nil protocol:protocol];
+//            [strongSelf setImpl:nil protocol:protocol]
+            NSLog(@"Module Provider @: create commited - %@", provider);
         }];
     }
 }

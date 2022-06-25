@@ -1,17 +1,17 @@
 //
-//  AFSIManager.h
-//  ServiceHackerObjc_Example
+//  AFSIRelationBuilder.h
+//  AFModule_Example
 //
 //  Created by 尼诺 on 2022/6/24.
 //  Copyright © 2022 AFutureD. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "AFSIProtocol.h"
+#import "AFProtocolB.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AFSIManager : NSObject<AFSIProtocol>
+@interface AFObjB : NSObject<AFProtocolB>
 
 @end
 

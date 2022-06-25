@@ -1,6 +1,6 @@
 //
 //  AFModuleService.h
-//  ServiceHackerObjc
+//  AFModule
 //
 //  Created by 尼诺 on 2022/6/24.
 //
@@ -31,9 +31,9 @@ typedef void(^CreaterCallback)(id<AFModuleProvider> provider);
 - (Protocol *)protocol;
 - (void)initialize:(id<AFModule>)module;
 - (void)use:(Creater)block;
+- (void)restCreater;
 
 - (Creater)creater;
-- (void)setCreater:(Creater)creater;
 - (void)setCallback:(CreaterCallback)callback;
 
 - (NSInteger)priority;

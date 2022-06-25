@@ -58,10 +58,10 @@ The code above, is try to call a macro.
 
 In this macro, you are provide some infomation to AFModule:
 
-	1. The priority of your Services.
-	1. The property name of AFModule that others can perform method on.
-	1. Your Protocol.
-	1. The initial action you want to do. In example, we simply return an implement of the Protocol.
+1. The priority of your Services.
+2. The property name of AFModule that others can perform method on.
+3. Your Protocol.
+4. The initial action you want to do. In example, we simply return an implement of the Protocol.
 
 ### Other Useage
 

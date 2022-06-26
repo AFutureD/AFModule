@@ -1,15 +1,11 @@
 //
-//  AFModuleService.m
+//  AFModuleProvider.m
 //  AFModule
 //
-//  Created by 尼诺 on 2022/6/24.
+//  Created by 尼诺 on 2022/6/26.
 //
 
-#import "AFModuleService.h"
-
-@implementation AFModuleService
-
-@end
+#import "AFModuleProvider.h"
 
 @interface AFModuleProvider () {
     Creater _creater;
@@ -87,9 +83,9 @@
 
 - (NSString *)description {
     return [NSString stringWithFormat:@"%@(%@:%@)",
-        NSStringFromClass(self.class),  // 类名
-        @([self priority]),             // 优先级
-        @(self.creater != nil)          // 是否有 creater
+            NSStringFromClass(self.class),  // 类名
+            @([self priority]),             // 优先级
+            @(self.creater != nil)          // 是否有 creater
     ];
 }
 

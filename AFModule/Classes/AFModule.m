@@ -9,6 +9,7 @@
 #import <YYModel/YYModel.h>
 #import <objc/runtime.h>
 #import <objc/message.h>
+#import "AFModuleProvider.h"
 
 @interface AFModule ()  {
     dispatch_semaphore_t _providerLock;
@@ -21,6 +22,8 @@
 @end
 
 @implementation AFModule
+
+#pragma mark - shareInstance
 
 + (instancetype)shareInstance {
     static AFModule * instance = nil;
@@ -39,6 +42,8 @@
     return [AFModule shareInstance];
 }
 
+#pragma mark - init
+
 - (instancetype)init {
     self = [super init];
     if (self) {
@@ -50,6 +55,8 @@
     return self;
 }
 
+#pragma mark - Public Methods
+
 + (id)implForProtocol:(nonnull Protocol *)protocol {
     return [[self shareInstance] implForProtocol:protocol];
 }
@@ -57,6 +64,16 @@
 + (void)setImpl:(nullable id)impl protocol:(nonnull Protocol *)protocol {
     [[self shareInstance] setImpl:impl protocol:protocol];
 }
+
++ (void)start {
+    [[self shareInstance] initialize];
+}
+
++ (void)reload {
+    [[self shareInstance] reload];
+}
+
+#pragma mark - Map Operater
 
 - (id)implForProtocol:(nonnull Protocol *)protocol {
     dispatch_semaphore_wait(self->_implLock, DISPATCH_TIME_FOREVER);
@@ -129,7 +146,9 @@
     return NSAllMapTableKeys(self.protToProvider);
 }
 
-- (void)start {
+#pragma mark - Private Methods
+
+- (void)initialize {
     [self prepareProvider];
     [self initProvider];
     [self setProviderCallback];
@@ -195,6 +214,32 @@
         }];
     }
 }
+
+#pragma mark - Objc Runtime
+
+- (id)handleMissIMPL:(SEL)aSelector {
+    NSLog(@"Module Performing: ERROR! Unimplement method - %@", NSStringFromSelector(aSelector));
+    return nil;
+}
+
+- (void)forwardInvocation:(NSInvocation *)invocation {
+    SEL sel = invocation.selector;                  // get failed method
+    [invocation setSelector:@selector(handleMissIMPL:)];  // set fallback method
+    [invocation setTarget:self];                    // set receiver
+    [invocation setArgument:&sel atIndex:2];        // set arguement
+    [invocation invoke];
+}
+
+- (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
+    NSMethodSignature *methodSignature = [super methodSignatureForSelector:aSelector];
+    if (!methodSignature) {
+        // Fallback unimplement method to `handleMissIMPL:`
+        methodSignature = [self methodSignatureForSelector:@selector(handleMissIMPL:)];
+    }
+    return methodSignature;
+}
+
+#pragma mark - Utils
 
 - (YYClassInfo *)metaInfos {
     return [YYClassInfo classInfoWithClass:self.class];

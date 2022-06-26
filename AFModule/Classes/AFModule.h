@@ -14,8 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)shareInstance;
 
-- (void)start;
-- (void)reload;
++ (void)start;
++ (void)reload;
 
 @end
 

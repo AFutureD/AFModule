@@ -11,5 +11,6 @@
 #import "AFModule.h"
 #import "AFModuleDefine.h"
 #import "AFModuleService.h"
+#import "AFModuleProvider.h"
 
 #endif

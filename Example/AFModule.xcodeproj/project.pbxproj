@@ -74,6 +74,7 @@
 		D287962628675528004FC941 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = "Supporting Files/Main.storyboard"; sourceTree = "<group>"; };
 		D287962728675528004FC941 /* AFAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFAppDelegate.m; path = "Supporting Files/AFAppDelegate.m"; sourceTree = "<group>"; };
 		D287962828675528004FC941 /* AFAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFAppDelegate.h; path = "Supporting Files/AFAppDelegate.h"; sourceTree = "<group>"; };
+		D287963128685F29004FC941 /* AFProtocolC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFProtocolC.h; sourceTree = "<group>"; };
 		FC7E0A6ACC63440A9C685245 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -211,6 +212,7 @@
 			children = (
 				D287960B286754CE004FC941 /* AFProtocolA.h */,
 				D287960A286754CE004FC941 /* AFProtocolB.h */,
+				D287963128685F29004FC941 /* AFProtocolC.h */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";

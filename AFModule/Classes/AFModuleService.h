@@ -29,21 +29,15 @@ typedef void(^CreaterCallback)(id<AFModuleProvider> provider);
 @protocol AFModuleProvider <NSObject>
 
 - (Protocol *)protocol;
+- (NSInteger)priority;
+- (Creater)creater;
+
 - (void)initialize:(id<AFModule>)module;
 - (void)use:(Creater)block;
-- (void)restCreater;
 
-- (Creater)creater;
+- (void)restCreater;
 - (void)setCallback:(CreaterCallback)callback;
 
-- (NSInteger)priority;
-
-@end
-
-@interface AFModuleProvider : NSObject<AFModuleProvider>
-@end
-
-@interface AFModuleService : NSObject
 @end
 
 NS_ASSUME_NONNULL_END

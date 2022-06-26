@@ -11,6 +11,7 @@
 #import "AFObjA.h"
 #import "AFProtocolA.h"
 #import "AFProtocolB.h"
+#import "AFProtocolC.h"
 
 @interface AFViewController ()
 
@@ -21,12 +22,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [[AFModule shareInstance] start];
+    [AFModule start];
     
     [[AFModule shareInstance].myService hello:@"world"];
     
     [[AFModule shareInstance].yourService say:@"hello. Once"];
     NSAssert([AFModule shareInstance].yourService == nil, @"");
+    
+    [[AFModule shareInstance].missingService callOnce];
     
     [[AFModule shareInstance].myService prepareImpl];
     [[AFModule shareInstance].yourServiceProvider restCreater];
